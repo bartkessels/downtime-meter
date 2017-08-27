@@ -41,8 +41,8 @@ $ composer install
 First create the user and the database
 
 ```
-mysql> CREATE USER downtimemeter;
-mysql> CREATE DATABASE 'downtimemeter'@'localhost' IDENTIFIED BY 'secret';
+mysql> CREATE DATABASE downtimemeter;
+mysql> CREATE USER 'downtimemeter'@'localhost' IDENTIFIED BY 'secret';
 mysql> GRANT ALL PRIVILEGES ON downtimemeter.* TO 'downtimemeter'@'localhost';
 mysql> FLUSH PRIVILEGES;
 mysql> quit;
