@@ -13,12 +13,11 @@
         <div class="w3-row-padding w3-padding-64 w3-container">
             <div class="w3-content">
             
-
                 <!-- Quick info widgets -->
                 <div class="w3-row">
                     <!-- Pychart with up- / downtime info -->
                     <div class="w3-col s8">
-                        <canvas id="pychart_uptime"></canvas>
+                        <canvas id="piechart_uptime"></canvas>
                     </div>
 
                     <div class="w3-col s4">
@@ -108,8 +107,8 @@
                 }
             });
 
-            var ctx_pychart = document.getElementById("pychart_uptime").getContext('2d');
-            var pychart_uptime = new Chart(ctx_pychart, {
+            var ctx_piechart = document.getElementById("piechart_uptime").getContext('2d');
+            var piechart_uptime = new Chart(ctx_piechart, {
                 type: 'doughnut',
                 data: {
                     datasets: [{
@@ -123,8 +122,8 @@
                         ]
                     }],
                     labels: [
-                        'Downtime',
-                        'Uptime'
+                        'Uptime',
+                        'Downtime'
                     ]
                 }
             });
