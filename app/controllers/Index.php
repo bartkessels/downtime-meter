@@ -40,8 +40,5 @@ class Index
             'downtimeHours'     => $downtimeHours,
             'dataLastSevenDays' => $dataLastSevenDays
         ]);
-
-        // All data
-        // $stmt = $pdo->query('SELECT time, down FROM downtime');
     }
 }
