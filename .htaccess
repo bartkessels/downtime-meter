@@ -1,0 +1,14 @@
+# Block access to .env file
+<files .env>
+order allow,deny
+deny from all
+</files>
+
+# Allow URL rewriting
+RewriteEngine On
+
+# Pages
+RewriteRule ([^/]+)/?$/([^/]+)/?$ index.php?controller=$1&method=$2
+
+# Disable folder indexing
+Options -Indexes

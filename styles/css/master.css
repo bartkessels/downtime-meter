@@ -1,0 +1,18 @@
+body {
+    font-size:16px;
+}
+
+.w3-main {
+    margin-left:340px;
+    margin-right:40px;
+    margin-top:56px !important;
+}
+
+body .w3-main .larger {
+    font-size: 64px !important;
+}
+
+footer {
+    margin-top:75px;
+    padding-right:58px;
+}
