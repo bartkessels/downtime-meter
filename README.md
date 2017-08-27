@@ -41,8 +41,8 @@ $ composer install
 First create the user and the database
 
 ```
-mysql> CREATE USER downtimemeter;
-mysql> CREATE DATABASE 'downtimemeter'@'localhost' IDENTIFIED BY 'secret';
+mysql> CREATE DATABASE downtimemeter;
+mysql> CREATE USER 'downtimemeter'@'localhost' IDENTIFIED BY 'secret';
 mysql> GRANT ALL PRIVILEGES ON downtimemeter.* TO 'downtimemeter'@'localhost';
 mysql> FLUSH PRIVILEGES;
 mysql> quit;
@@ -71,7 +71,7 @@ In most cases you don't want to ping too many times so we will set the interval 
 Inside the cronjob file put the following content
 
 ```
-*/5 * * * * /path/to/the/application/ping.php
+*/5 * * * * php /path/to/the/application/ping.php
 ```
 
 * Change `/path/to/the/application/` with the actual path to the downtime meter application. But leave
