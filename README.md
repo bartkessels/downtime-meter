@@ -71,7 +71,7 @@ In most cases you don't want to ping too many times so we will set the interval 
 Inside the cronjob file put the following content
 
 ```
-*/5 * * * * /path/to/the/application/ping.php
+*/5 * * * * php /path/to/the/application/ping.php
 ```
 
 * Change `/path/to/the/application/` with the actual path to the downtime meter application. But leave
