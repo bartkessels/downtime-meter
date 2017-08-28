@@ -51,7 +51,13 @@
                 data: {
                     labels: [
                         @foreach($dataLastSevenDays as $data)
-                            "{{ date('d-m-Y', strtotime($data['time'])) }} {{ date('H:i', strtotime($data['time'])) }}",
+                            @php
+                                $dateTime = new DateTime("now", new DateTimeZone(TIMEZONE));
+                                $dateTime->setTimestamp(strtotime($data['time']));
+                            @endphp
+
+                            "{{ $dateTime->format('d-m-Y H:i') }}",
+
                         @endforeach
                     ],
                     datasets: [{

@@ -23,20 +23,6 @@ foreach($_ENV as $key => $value) {
 
 /*
 |--------------------------------------------------------------------------
-| Register blade
-|--------------------------------------------------------------------------
-|
-| Setup the blade templating engine
-|
-*/
-$views = __DIR__.'/views';
-$cache = __DIR__.'/cache';
-
-$blade = new Blade($views, $cache);
-$GLOBALS['blade'] = $blade;
-
-/*
-|--------------------------------------------------------------------------
 | Set display errors
 |--------------------------------------------------------------------------
 |
@@ -51,3 +37,17 @@ if(ENVIRONMENT == 'production') {
 	error_reporting(E_ALL);
 	ini_set("display_errors", "1");
 }
+
+/*
+|--------------------------------------------------------------------------
+| Register blade
+|--------------------------------------------------------------------------
+|
+| Setup the blade templating engine
+|
+*/
+$views = __DIR__.'/views';
+$cache = __DIR__.'/cache';
+
+$blade = new Blade($views, $cache);
+$GLOBALS['blade'] = $blade;
