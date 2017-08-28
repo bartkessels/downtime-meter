@@ -20,13 +20,13 @@ class Index
         $pdo = $database->connect();
 
         // Hours of downtime (Last 7 days)
-        $stmt = $pdo->query('SELECT down FROM downtime WHERE time >= DATE(NOW()) - INTERVAL 7 DAY AND down = -1;');
+        $stmt = $pdo->query('SELECT down FROM downtime WHERE down = -1;');
         $downtimeRecords = $stmt->rowCount();
 
         $downtimeHours = round($downtimeRecords / 12, 1);
 
         // Hours of uptime (Last 7 days)
-        $stmt = $pdo->query('SELECT down FROM downtime WHERE time >= DATE(NOW()) - INTERVAL 7 DAY AND down = 1;');
+        $stmt = $pdo->query('SELECT down FROM downtime WHERE down = 1;');
         $uptimeRecords = $stmt->rowCount();
 
         $uptimeHours = round($uptimeRecords / 12, 1);
