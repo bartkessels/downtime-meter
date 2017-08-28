@@ -19,13 +19,13 @@ class Index
         $database = new Database();
         $pdo = $database->connect();
 
-        // Hours of downtime (Last 7 days)
+        // Hours of downtime
         $stmt = $pdo->query('SELECT down FROM downtime WHERE down = -1;');
         $downtimeRecords = $stmt->rowCount();
 
         $downtimeHours = round($downtimeRecords / 12, 1);
 
-        // Hours of uptime (Last 7 days)
+        // Hours of uptime
         $stmt = $pdo->query('SELECT down FROM downtime WHERE down = 1;');
         $uptimeRecords = $stmt->rowCount();
 
